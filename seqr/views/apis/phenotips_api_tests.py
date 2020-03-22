@@ -5,9 +5,12 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
 from django.urls.base import reverse
 
-from seqr.views.apis.phenotips_api import phenotips_edit_handler, phenotips_pdf_handler, receive_hpo_table_handler
+from seqr.views.apis.phenotips_api import phenotips_edit_handler, phenotips_pdf_handler, receive_hpo_table_handler, update_individual_hpo_terms
 from seqr.views.utils.test_utils import _check_login, create_proxy_request_stub
 
+INDIVIDUAL_GUID = 'I000001_na19675'
+
+NEW_INDIVIDUAL_GUID = 'I000001_nw19675'
 
 class PhenotipsAPITest(TestCase):
     fixtures = ['users', '1kg_project', 'reference_data']
@@ -78,3 +81,13 @@ class PhenotipsAPITest(TestCase):
             ],
             'info': ['1 individuals will be updated'],
         })
+
+    def test_update_individual_hpo_terms(self):
+        url = reverse(update_individual_hpo_terms, args=[INDIVIDUAL_GUID])
+        _check_login(self, url)
+
+        # response = self.client.get(url)
+        # self.assertEqual(response.status_code, 200)
+        # response_json = response.json()
+        # self.assertListEqual(response_json.keys(),
+        #     ['phenotipsData', 'phenotipsEid'])
