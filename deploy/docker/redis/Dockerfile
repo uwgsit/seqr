@@ -1,4 +1,4 @@
-FROM redis:4.0.9
+FROM redis:4.0.10
 
 MAINTAINER MacArthur Lab
 
