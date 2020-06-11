@@ -31,6 +31,8 @@ services:
       - 9200:9200
     volumes:
       - ./data/elasticsearch:/elasticsearch-data
+    environment:
+      - ELASTICSEARCH_SERVICE_PORT=9200
     healthcheck:
       test: bash -c "curl -s elasticsearch:9200 | grep search"
       interval: 3s
