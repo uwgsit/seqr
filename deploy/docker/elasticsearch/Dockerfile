@@ -2,7 +2,7 @@ FROM openjdk:8-jdk
 
 MAINTAINER MacArthur Lab
 
-ENV ELASTICSEARCH_VERSION="6.3.2"
+ENV ELASTICSEARCH_VERSION="6.6.1"
 
 # install commmon utilities
 RUN apt-get update \

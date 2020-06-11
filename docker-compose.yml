@@ -26,7 +26,7 @@ services:
 
 
   elasticsearch:
-    image: gcr.io/seqr-project/elasticsearch:gcloud-prod
+    image: elasticsearch:v1
     ports:
       - 9200:9200
     volumes:
@@ -39,7 +39,7 @@ services:
 
 
   kibana:
-    image: gcr.io/seqr-project/kibana:gcloud-prod
+    image: kibana:v1
     ports:
       - 5601:5601
     environment:

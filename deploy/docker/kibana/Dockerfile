@@ -2,7 +2,7 @@ FROM openjdk:8-jdk
 
 MAINTAINER MacArthur Lab
 
-ENV KIBANA_VERSION="6.3.2"
+ENV KIBANA_VERSION="6.6.1"
 
 # create user 'kibana'
 RUN useradd -ms /bin/bash kibana
