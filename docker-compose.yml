@@ -15,7 +15,7 @@ services:
 
 
   redis:
-    image: gcr.io/seqr-project/redis:gcloud-prod
+    image: redis:v1
     ports:
       - 6379:6379
     healthcheck:
